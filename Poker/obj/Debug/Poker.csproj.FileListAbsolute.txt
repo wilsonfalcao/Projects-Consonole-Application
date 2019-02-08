@@ -1,0 +1,9 @@
+c:\users\pcr-27929\documents\visual studio 2012\Projects\Poker\Poker\bin\Debug\Poker.exe.config
+c:\users\pcr-27929\documents\visual studio 2012\Projects\Poker\Poker\obj\Debug\Poker.csprojResolveAssemblyReference.cache
+c:\users\pcr-27929\documents\visual studio 2012\Projects\Poker\Poker\bin\Debug\Poker.exe
+c:\users\pcr-27929\documents\visual studio 2012\Projects\Poker\Poker\bin\Debug\Poker.pdb
+c:\users\pcr-27929\documents\visual studio 2012\Projects\Poker\Poker\obj\Debug\Poker.exe
+c:\users\pcr-27929\documents\visual studio 2012\Projects\Poker\Poker\obj\Debug\Poker.pdb
+C:\Users\pcr-27929\OneDrive\Poker\Poker\bin\Debug\Poker.exe.config
+C:\Users\pcr-27929\OneDrive\Poker\Poker\obj\Debug\Poker.exe
+C:\Users\pcr-27929\OneDrive\Poker\Poker\obj\Debug\Poker.pdb
