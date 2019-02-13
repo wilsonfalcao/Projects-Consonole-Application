@@ -20,7 +20,7 @@ namespace Poker.Mao
     }
     public class Body_Card_Omaha_HI
     {
-        public int PlayerID { get; set; }
+        /*public int PlayerID { get; set; }
         public string ID1 { get; set; }
         public string CARTA1 { get; set; }
         public string ID2 { get; set; }
@@ -28,7 +28,10 @@ namespace Poker.Mao
         public string ID3 { get; set; }
         public string CARTA3 { get; set; }
         public string ID4 { get; set; }
-        public string CARTA4 { get; set; }
+        public string CARTA4 { get; set; }*/
+        public int PlayerID { get; set; }
+        public string ID { get; set; }
+        public string CARTA { get; set; }
     }
     public class Card_One
     {

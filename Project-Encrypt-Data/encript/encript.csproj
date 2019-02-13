@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5B5BE404-839E-4CB4-B479-BC4AF1B7A5BA}</ProjectGuid>
+    <ProjectGuid>{3A0FE2ED-2B0D-426B-81A3-BABD7FF77D59}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Poker</RootNamespace>
-    <AssemblyName>Poker</AssemblyName>
+    <RootNamespace>encript</RootNamespace>
+    <AssemblyName>encript</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,17 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cartas\Criar_Cartas.cs" />
-    <Compile Include="Jogo\Analitcs_Game.cs" />
-    <Compile Include="Jogo\Start_Game.cs" />
-    <Compile Include="Mao\Body_Card.cs" />
+    <Compile Include="encipite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

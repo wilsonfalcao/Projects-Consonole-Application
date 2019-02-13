@@ -1,0 +1,9 @@
+c:\users\pcr-27929\documents\visual studio 2012\Projects\encript\encript\bin\Debug\encript.exe.config
+c:\users\pcr-27929\documents\visual studio 2012\Projects\encript\encript\bin\Debug\encript.exe
+c:\users\pcr-27929\documents\visual studio 2012\Projects\encript\encript\bin\Debug\encript.pdb
+c:\users\pcr-27929\documents\visual studio 2012\Projects\encript\encript\obj\Debug\encript.exe
+c:\users\pcr-27929\documents\visual studio 2012\Projects\encript\encript\obj\Debug\encript.pdb
+C:\Users\pcr-27929\documents\visual studio 2012\Projects\encript\encript\obj\Debug\encript.csprojResolveAssemblyReference.cache
+C:\Users\wilson.falcao\Desktop\Meus Projetos\Main file\Visual Studio 2012\Projects\encript\encript\bin\Debug\encript.exe.config
+C:\Users\wilson.falcao\Desktop\Meus Projetos\Main file\Visual Studio 2012\Projects\encript\encript\obj\Debug\encript.exe
+C:\Users\wilson.falcao\Desktop\Meus Projetos\Main file\Visual Studio 2012\Projects\encript\encript\obj\Debug\encript.pdb

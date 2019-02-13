@@ -10,42 +10,57 @@ namespace Poker.Jogo
 {
     public class Start_Game
     {
-        public Start_Game(int play)
+        //Construindo Cartas
+        Criar_Cartas Cartoes = new Criar_Cartas();
+
+
+        //Construtor da Classe
+        public Start_Game(byte sala)
         {
-            Start_Poker_Texas(play);
+            //Zerando Tudo
+            Mesa.Clear(); Mao_Texas.Clear(); Criar_Cartas.Cartas_Distribuidas.Clear();
+            //Iniciando Round
+            Round = 1;
+
+            //Construindo Mãos
+            this.Start_Poker_Separador_Cartas_Mao(2, Cartoes);
+
+            //Construindo Mesa
+            this.Start_Poker_Separador_Cartas_Mesa(3, Cartoes, 1);
         }
 
-
+        //#####################################################################
         //Metodo de inicialização de jogo
         public void Start_Poker_Omaha(int Cont_Players)
         {
-        }
-        public void Start_Poker_Texas(int Cont_Players)
-        {
-            //Construindo Cartas
-            Criar_Cartas Cartoes = new Criar_Cartas();
 
-            //Iniciando Round
-
-            //Construindo Mãos
-            Start_Poker_Separador_Cartas(1, Cartoes);
-            
         }
-        public void Start_Poker_Separador_Cartas(byte TP_Separator, Criar_Cartas Cartoes) 
+        public void Round_Poker_Texas()
         {
-            switch (TP_Separator)
+            if (Round <= 3)
             {
-                case 0:break;
+                //Iniciando Round
+                Round += Round;
 
-                case 1:
-                    int cont1 = 0;
-                    while(cont1 < 3)
+                //Construindo Novo Round
+                this.Start_Poker_Separador_Cartas_Mesa(1, Cartoes, Round);
+            }
+            else if (Round == 4)
+            {
+                WIN = Analisar_Mao(Mesa, Mao_Texas);
+            }
+        }
+
+        //Metodo de separação de cartas
+        private void Start_Poker_Separador_Cartas_Mao(byte Q_Carta,Criar_Cartas Cartoes) 
+        {
+            for (int cont = 0; cont < Q_Carta; cont++)
                     {
                         Random Embaralhar = new Random();
                         int Id_Card = Embaralhar.Next(0, 52);
-                        if (Check_Card_D(Id_Card))
+                        if (Check_Card_D(Id_Card,Cartoes))
                         {
-                            Start_Poker_Separador_Cartas(1, Cartoes);
+                            cont--;
                         }
                         else
                         {
@@ -57,19 +72,35 @@ namespace Poker.Jogo
                                 CARTA = Cartoes.Cartas_Jogo[Id_Card, 1],
                             });
                         }
-                        cont1++;
                     }
-                    var teste = Criar_Cartas.Cartas_Distribuidas;
-                    break;
-
-                case 2:break;
+        }
+        private void Start_Poker_Separador_Cartas_Mesa(byte Q_Carta, Criar_Cartas Cartoes, byte Round)
+        {
+            for (int cont = 0; cont < Q_Carta; cont++)
+            {
+                Random Embaralhar = new Random();
+                int Id_Card = Embaralhar.Next(0, 52);
+                if (Check_Card_D(Id_Card, Cartoes))
+                {
+                    cont--;
+                }
+                else
+                {
+                    //Fazendo a mão de Poker
+                    Mesa.Add(new Card_One
+                    {
+                        ROUND = Round,
+                        ID = Cartoes.Cartas_Jogo[Id_Card, 0],
+                        CARTA = Cartoes.Cartas_Jogo[Id_Card, 1],
+                    });
+                }
             }
         }
-        //Metodos da Classe Chek e Create
-        private bool Check_Card_D(int id_card)
+        
+        //Metodos de analise a carta
+        private bool Check_Card_D(int id_card,Criar_Cartas C_Poker)
         {
             bool Validation = false;
-            Criar_Cartas C_Poker = new Criar_Cartas();
             if (Criar_Cartas.Cartas_Distribuidas.Count() != 0)
             {
                 List<Body_Card_One> Value = Criar_Cartas.Cartas_Distribuidas.FindAll(s => s.ID == id_card.ToString());
@@ -91,9 +122,20 @@ namespace Poker.Jogo
             return Validation;
         }
 
+        //Metodo de analise a jogo
+        private string Analisar_Mao(List<Card_One> Mesa_Analise, List<Body_Card_Texas_Holdem> Mao_Analise)
+        {
+            Analitcs_Game Analise = new Analitcs_Game(Mao_Analise,Mesa_Analise);
+            return Analise.Jogada_Mao;
+        }
+        //#######################################################################
+
+
         //Atributos da Classe
-        public List<Body_Card_One> Mao_One = new List<Body_Card_One>();
+        public List<Card_One> Mesa = new List<Card_One>();
         public List<Body_Card_Omaha_HI> Mao_Omaha = new List<Body_Card_Omaha_HI>();
         public List<Body_Card_Texas_Holdem> Mao_Texas = new List<Body_Card_Texas_Holdem>();
+        public byte Round;
+        public string WIN;
     }
 }
